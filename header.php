@@ -9,7 +9,8 @@
  * @package overgang
  */
 
-?><!doctype html>
+?>
+<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -20,6 +21,22 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div class="container root">
+<div class="root">
 
+<div class="site-wrapper">
 	<div id="content" class="site-content">
+        <nav class="pushed__left navbar navbar-toggleable-md navbar-light">
+            <a class="navbar-brand" href="#">
+                <img src="<?= get_template_directory_uri() ?>/img/logo-overgang.png" alt="">
+            </a>
+            <div class="collapse navbar-collapse overgang_nav" id="navbarSupportedContent">
+	            <?php
+                $args = [
+                    'menu' => 'top-menu',
+                    'menu_class' => 'navbar-nav ml-auto',
+                    'container' => ''
+                ];
+                wp_nav_menu($args);
+                ?>
+            </div>
+        </nav>

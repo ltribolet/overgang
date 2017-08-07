@@ -1,17 +1,8 @@
-<?php
-/**
- * The sidebar containing the main widget area
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package overgang
- */
-
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
-?>
-
 <aside id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+    <ul class="list-unstyled">
+        <li><div class="vertical-text">Övergång magazine - Paris & Toronto</div></li>
+        <li><div class="vertical-text">Facebook - Instagram</div></li>
+        <li><div class="vertical-text">Go to top</div></li>
+        <li><div class="vertical-text">Partager Övergång</div></li>
+    </ul>
 </aside><!-- #secondary -->
