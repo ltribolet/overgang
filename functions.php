@@ -118,38 +118,19 @@ function overgang_pingback_header() {
 }
 add_action( 'wp_head', 'overgang_pingback_header' );
 
-/**
- * Add custom taxonomies
- *
- * Additional custom taxonomies can be defined here
- * http://codex.wordpress.org/Function_Reference/register_taxonomy
- */
-function add_custom_taxonomies() {
-	// Add new "Locations" taxonomy to Posts
-	register_taxonomy('magazine', 'post', array(
-		// Hierarchical taxonomy (like categories)
-		'hierarchical' => true,
-		// This array of options controls the labels displayed in the WordPress Admin UI
-		'labels' => array(
-			'name' => _x( 'Magazines', 'taxonomy general name' ),
-			'singular_name' => _x( 'Magazine', 'taxonomy singular name' ),
-			'search_items' =>  __( 'Search Magazines' ),
-			'all_items' => __( 'Tous les magazines' ),
-			'edit_item' => __( 'Éditer un magazine' ),
-			'update_item' => __( 'Mettre à jour un magazine' ),
-			'add_new_item' => __( 'Ajouter une nouveau magazine' ),
-			'new_item_name' => __( 'Nom du nouveau magazine' ),
-			'menu_name' => __( 'Magazines' ),
-		),
-		// Control the slugs used for this taxonomy
-		'rewrite' => array(
-			'slug' => 'magazines', // This controls the base slug that will display before each term
-			'with_front' => false, // Don't display the category base before "/locations/"
-			'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
-		),
-	));
+function overgang_tiny_mce_plugin($plugin_array)
+{
+	$plugin_array['overgang_plugin'] = get_template_directory_uri() . '/js/tinymce.plugin.js';
+	return $plugin_array;
 }
-add_action( 'init', 'add_custom_taxonomies', 0 );
+add_filter('mce_external_plugins', 'overgang_tiny_mce_plugin');
+
+function overgang_mce_buttons($buttons)
+{
+	array_push($buttons, 'overgang_modules');
+	return $buttons;
+}
+add_filter('mce_buttons', 'overgang_mce_buttons');
 
 /**
  * Implement the Custom Header feature.

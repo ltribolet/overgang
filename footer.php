@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 
-    <hr>
+    <hr class="m-0">
 	<footer id="colophon" class="site-footer" role="contentinfo">
         <div class="signature container">
             <div class="row">
@@ -50,7 +50,7 @@
                 </div>
             </div>
         </div>
-        <hr class="marg0">
+        <hr class="m-0">
         <div class="copyright d-flex justify-content-center">
             <span>&copy; Copyright Övergång Magazine <?= date('Y')?>. All rights reserved.</span>
         </div>
@@ -63,30 +63,26 @@ get_sidebar();
 ?>
 </div><!--.root-->
 
-<?php if (is_home()) {?>
-    <div class="newsletter d-flex justify-content-center">
+<?php if (is_home() || is_single() || is_page('archives')) {?>
+    <div class="newsletter default-gradient d-flex justify-content-center align-items-center">
         <div>
-            <div class="newsletter__logo"><img src="<?= get_template_directory_uri() ?>/img/logo-overgang-white.png" alt=""></div>
-            <p>Recevoir notre newsletter</p>
-            <!--<div><input type="text"><button>Envoyer</button></div>-->
-            <!-- Begin MailChimp Signup Form -->
-            <div id="mc_embed_signup">
+            <div class="d-flex justify-content-center newsletter__logo"><img class="m-auto" src="<?= get_template_directory_uri() ?>/img/logo-overgang-white.png" alt=""></div>
+            <p class="align-content-center" style="font-size: 40px">Recevoir notre newsletter</p>
+            <div class="d-flex justify-content-center" id="mc_embed_signup">
                 <form action="//overgang.us16.list-manage.com/subscribe/post?u=9934da7c3617d37ede589d0fd&amp;id=92352c949a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                     <div id="mc_embed_signup_scroll">
 
-                        <div class="mc-field-group">
                             <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
                             <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
                         </div>
                         <div id="mce-responses">
                             <div class="response" id="mce-error-response" style="display:none"></div>
                             <div class="response" id="mce-success-response" style="display:none"></div>
-                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        </div>
                         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9934da7c3617d37ede589d0fd_92352c949a" tabindex="-1" value=""></div>
                     </div>
                 </form>
             </div>
-            <!--End mc_embed_signup-->
         </div>
     </div>
 <?php }?>

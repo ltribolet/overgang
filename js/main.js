@@ -25,6 +25,30 @@ jQuery(document).ready(function($){
     $(window).on('load', alignElementToContainer);
     $(window).on('resize', alignElementToContainer);
 
+    $('.archive_item').hover(function () {
+        var bgcolor_begin = $(this).data('bgcolor-begin'),
+            bgcolor_end = $(this).data('bgcolor-end'),
+            $this = $(this);
+
+        $this.removeClass('inactive_item');
+
+        $('.inactive_item').each(function() {
+            $(this).css('opacity', '0.7');
+        });
+
+        bgcolor = 'linear-gradient(to left top, '+bgcolor_end+',  '+bgcolor_begin+')'
+        $('.site-content').css('background', bgcolor);
+    }, function () {
+        var $this = $(this);
+
+        $('.inactive_item').each(function() {
+            $(this).css('opacity', '1');
+        });
+        $this.addClass('inactive_item');
+
+        $('.site-content').css('background', '#fff');
+    });
+
     $(window).on('load', function() {
         var c = document.createElement('canvas'),
             ctx = c.getContext('2d'),

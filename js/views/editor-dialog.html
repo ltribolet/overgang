@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Disable browser caching of dialog window -->
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <style type='text/css'>
+        body { font-family: sans-serif; font-size: 1.1em; background-color: #F1F1F1; color: #222; }
+        input[type="text"] { padding: 4px 6px; }
+        input[type="submit"] { padding: 4px; font-size: 1.2em; }
+    </style>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/tinymce/4.6.5/tinymce.min.js"></script>
+    <script type="text/javascript">
+        //  Step 1: Get arguments passed to dialog.
+        var passed_arguments = top.tinymce.activeEditor.windowManager.getParams();
+
+        $( function() {
+            tinymce.init({
+                selector: 'textarea',
+                height: 500,
+                menubar: false,
+                plugins: [
+                    'advlist autolink lists link image charmap print preview anchor',
+                    'searchreplace visualblocks',
+                    'paste'
+                ],
+                toolbar: 'undo redo | insert | styleselect | bold italic | link',
+            });
+
+            //  Step 2: Insert the shortcode when submit is clicked.
+            $("body").on('click', '#btn_save', function(event) {
+                event.preventDefault();
+
+                var content = '<div class="row little-spacing"><div class="col-5 offset-1">' + tinymce.get('left_column').getContent() + '</div><div class="col-5">' + tinymce.get('right_column').getContent() + '</div></div>';
+
+                //  Step 2b: Insert the shortcode into the editor
+                passed_arguments.editor.selection.setContent(content);
+                passed_arguments.editor.windowManager.close();
+            });
+        } );
+    </script>
+</head>
+<body>
+    <div id="tdsk_dialog_wrapper">
+        <form>
+            <div><textarea name="left_column" id="left_column" cols="30" rows="10"></textarea></div>
+            <div><textarea name="right_column" id="right_column" cols="30" rows="10"></textarea></div>
+            <div class="dry_row">
+                <input id="btn_save" class="button button-primary button-large" type="button" value="Valider"/>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

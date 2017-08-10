@@ -21,7 +21,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div class="root">
+<div class="<?php if (is_home() || is_single() || is_page('archives')) {?>root<?php }?>">
 
 <div class="site-wrapper">
 	<div id="content" class="site-content">
