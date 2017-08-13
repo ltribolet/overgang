@@ -35,7 +35,7 @@
             $("body").on('click', '#btn_save', function(event) {
                 event.preventDefault();
 
-                var content = '<div class="row little-spacing"><div class="col-5 offset-1">' + tinymce.get('left_column').getContent() + '</div><div class="col-5">' + tinymce.get('right_column').getContent() + '</div></div>';
+                var content = '<div class="row little-spacing"><div class="col-12 col-md-10 offset-md-1 col-lg-5 offset-lg-1">' + tinymce.get('left_column').getContent() + '</div><div class="col-12 col-md-10 offset-md-1 col-lg-5">' + tinymce.get('right_column').getContent() + '</div></div>';
 
                 //  Step 2b: Insert the shortcode into the editor
                 passed_arguments.editor.selection.setContent(content);

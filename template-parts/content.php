@@ -20,22 +20,8 @@ $post_content = apply_filters( 'the_content', get_the_content() );
 $post_content = str_replace( [ "\r\n", "\n", "\r" ], "", $post_content );
 
 
-$re = '/<h1>(.*?)<\/h1>/';
-preg_match_all( $re, $post_content, $summary_titles, PREG_SET_ORDER, 0 );
-
-/**
- * @param $post_content
- * @param $toBeReplaced
- * @param $replacement
- *
- * @return mixed
- */
-function replaceBody( $post_content, $toBeReplaced, $replacement ) {
-	return preg_replace( '/\{\{' . $toBeReplaced . '\}\}/', $replacement, $post_content );
-}
-
 // must do otherwise DOMDocument does not have a root and add one by itself but not the way we want it.
-$post_content = '<div>' . $post_content . '</div>';
+$post_content = '<div class="post_content">' . $post_content . '</div>';
 
 $dom           = new DOMDocument();
 $dom->encoding = 'utf-8';
@@ -51,35 +37,49 @@ if ( $h2s->length > 0 ) {
 	}
 }
 
+$h1s = $dom->getElementsByTagName( 'h1' );
+
+$linksSummary = [];
+if ( $h1s->length > 0 ) {
+	//Iterate though ps
+    /** @var DOMElement $h1 */
+    $h1i = 0;
+	foreach ( $h1s AS $h1 ) {
+	    ++$i;
+		$h1->setAttribute( 'id', sprintf('summary_id_%s', $i) );
+		$linksSummary[] = sprintf('<a href="#summary_id_%s" class="unstyled-link"><span>%02s</span> <span class="h2 pl-2">%s</span></a>', $i, $i, $h1->nodeValue);
+	}
+}
+
 $modified = $dom->saveHTML();
 ?>
     <section id="introduction" class="sub_header" style="background-image: linear-gradient(to left top, <?= $color_end ?>, <?= $color_begin ?>);">
-        <div class="container hero-holder d-flex justify-content-start">
+        <div class="container hero-holder d-flex justify-content-start big-spacing">
             <div class="row align-items-center justify-content-between">
-                <div class="col-5">
+                <div class="col-12 col-lg-5 handled-little-spacing">
                     <h3 class="information light-grey"><?= get_field( 'magazine_number', get_the_ID() ) ?> _ <?= date('M Y') ?></h3>
                     <h3 class="information light-grey"><?= get_field( 'location', get_the_ID() ) ?></h3>
                     <h1 class="h1 bold"><?php the_title() ?></h1>
                     <h2 class="h1"><?= $subtitle ?></h2>
                 </div>
-                <div class="offset-1 col-6 p-0">
-                    <div class="wrapper"><img class="" src="<?= $featured_image ?>" alt=""></div>
+                <div class="col-12 col-md-9 offset-md-3 offset-lg-1 col-lg-6">
+                    <div class="wrapper wrapper_intro"><img class="alignright" src="<?= $featured_image ?>" alt=""></div>
                 </div>
             </div>
         </div>
         <div class="container excerpt">
             <div class="row">
-                <div class="col-9">
-                    <h3 class="information light-grey">Édito</h3>
-					<p class="h2"><?= $excerpt ?></p>
-                </div>
-                <div class="col-2 offset-1">
+                <div class="col-12 offset-md-1 push-md-9 col-md-2">
                     <h3 class="information light-grey">En quelques mots</h3>
                     <ul class="list-unstyled">
-						<?php foreach ( $tags as $tag ) { ?>
+			            <?php foreach ( $tags as $tag ) { ?>
                             <li><?= $tag->name ?></li>
-						<?php } ?>
+			            <?php } ?>
                     </ul>
+                </div>
+                <div class="col-12 pull-md-3 col-md-9">
+                    <h3 class="information light-grey">Édito</h3>
+					<p class="h2"><?= $excerpt ?></p>
                 </div>
             </div>
 
@@ -92,8 +92,8 @@ $modified = $dom->saveHTML();
                     <h3 class="information light-grey">Sommaire</h3>
                     <ul class="list-unstyled">
 						<?php $i = 1;
-						foreach ( $summary_titles as $summary_title ) { ?>
-                            <li><a href="" class="unstyled-link"><span><?= sprintf( "%02s", $i ) ?></span> <span class="h2 pl-2"><?= $summary_title[1] ?></span></a></li>
+						foreach ( $linksSummary as $linkSummary ) { ?>
+                            <li><?= $linkSummary ?></li>
 							<?php ++ $i;
 						} ?>
                     </ul>
@@ -144,7 +144,15 @@ $modified = $dom->saveHTML();
 		$content_vcard   = get_field( 'content_vcard', $latest_post );
 		$credit_vcard    = get_field( 'credit_vcard', $latest_post );
 		?>
-        <div class="row m-0">
+        <div class="hidden-lg-up container">
+            <div class="row vcard_resize">
+                <div class="col-12 pr-0">
+                    <div class="vcard_content" style="background-image: linear-gradient(to left top, <?= $color_end ?>, <?= $color_begin ?>);"><?= $content_vcard ?><?= $credit_vcard ?></div>
+                </div>
+                <div class="col-12 pr-0"><img class="about__cover" src="<?= $thumbnail_vcard["url"] ?>" alt=""></div>
+            </div>
+        </div>
+        <div class="row m-0 hidden-md-down">
             <div class="col-6 p-0"><img class="about__cover" src="<?= $thumbnail_vcard["url"] ?>" alt=""></div>
             <div class="col-6 p-0" style="background-image: linear-gradient(to left top, <?= $color_end ?>, <?= $color_begin ?>);">
                 <div class="vcard_content"><?= $content_vcard ?><?= $credit_vcard ?></div>

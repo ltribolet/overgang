@@ -24,29 +24,29 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-5">
+                <div class="col-12 col-md-7 col-lg-5">
                     <p>Overgang Magazine meet amazing people, ambitious brands and association; let’s shake people brain together.</p>
+                    <p><a class="underline-link" href="">Facebook</a>
+                        <a class="underline-link" href="">Instagram</a></p>
                 </div>
-                <div class="col-2 offset-1">
-	                <?php
-	                $args = [
-		                'menu' => 'bottom-menu',
-		                'menu_class' => 'list-unstyled bottom-menu overgang_nav',
-		                'container' => ''
-	                ];
-	                wp_nav_menu($args);
-	                ?>
-                </div>
-                <div class="col-2 offset-1">
-                    <ul class="list-unstyled bottom-menu overgang_nav">
-                        <li><a href="">Nous soutenir sur Tipee</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <a class="underline-link" href="">Facebook</a>
-                    <a class="underline-link" href="">Instagram</a>
+                <div class="col-12 col-md-5 col-lg-6">
+                    <div class="row">
+                        <div class="col-12 col-lg-4 offset-lg-2">
+				            <?php
+				            $args = [
+					            'menu'       => 'bottom-menu',
+					            'menu_class' => 'list-unstyled bottom-menu overgang_nav',
+					            'container'  => ''
+				            ];
+				            wp_nav_menu( $args );
+				            ?>
+                        </div>
+                        <div class="col-12 col-lg-4 offset-lg-2">
+                            <ul class="list-unstyled bottom-menu overgang_nav">
+                                <li><a href="">Nous soutenir sur Tipee</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

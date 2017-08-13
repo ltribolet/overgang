@@ -72,7 +72,7 @@ html, body {
 }
 
 .site-content {
-    overflow: auto;
+    overflow: hidden;
 }
 
 .navbar {
@@ -81,6 +81,10 @@ html, body {
 
 .overgang_nav .navbar-nav a {
     margin-left: 43px;
+}
+
+.drop_menu_container a,
+.overgang_nav .navbar-nav a {
     font-size: 14px;
 }
 
@@ -89,18 +93,47 @@ html, body {
 }
 
 .overgang_nav a,
+.drop_menu_container a,
 .underline-link {
     color: #232323;
 }
 .underline-link:hover,
+.drop_menu_container a:hover,
 .overgang_nav .navbar-nav a:hover {
     text-decoration: none;
 }
 
 .underline-link,
 .overgang_nav .navbar-nav a:hover,
+.drop_menu_container a:hover,
+.drop_menu_container .current_page_item a,
 .overgang_nav .navbar-nav .current_page_item a {
     border-bottom: #232323 1px solid;
+}
+
+.navbar {
+    z-index: 10;
+}
+
+.drop_menu_container {
+    position: absolute;
+    right: 1rem;
+    padding: 10px;
+}
+
+.drop_menu {
+}
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid\9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
 }
 
 .hero-holder {
@@ -135,9 +168,36 @@ html, body {
     background: #fff;
 }
 
+.sidebar-container {
+    position:relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.moving-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    max-width: 100%;
+}
+
+#progressBar {
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    width: 3px;
+}
+
+#secondary ul {
+    height:100%;
+}
+
 #secondary ul li {
-    height: 400px;
-    margin: 100px 0;
+    height: 33%;
+    margin: 0;
 }
 
 .vertical-container {
@@ -151,6 +211,10 @@ html, body {
     margin-left: 49px;
 }
 
+.chapter-sidebar {
+    display:none;
+}
+
 #introduction {
     padding-right: 0;
     padding-left: 0;
@@ -162,7 +226,6 @@ html, body {
 }
 
 .excerpt {
-    margin-top: 200px;
     padding-bottom: 100px;
 }
 
@@ -171,7 +234,10 @@ html, body {
 }
 
 #post_body h1 {
-    display: none;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    margin: 0;
 }
 
 .aligncenter {
@@ -215,31 +281,35 @@ html, body {
     float: left;
 }
 
-#post_body .align-items-center .wrapper > .alignright {
+.align-items-center .wrapper > .alignright {
     float: none;
 }
 
-#post_body .align-items-center .wrapper > .alignleft {
+.align-items-center .wrapper > .alignleft {
     float: none;
 }
 
-#post_body .align-items-center .wrapper {
+.align-items-center .wrapper {
     position: relative;
     height: auto;
 }
 
-#post_body .align-items-center .wrapper img {
+.align-items-center .wrapper img {
     object-fit: contain;
     width: 50vw;
     position: absolute;
     height: auto;
 }
 
-#post_body .align-items-center .wrapper .alignleft {
+.align-items-center .wrapper_intro img {
+    position: static;
+}
+
+.align-items-center .wrapper .alignleft {
     right: 0;
 }
 
-#post_body .align-items-center .wrapper .alignright {
+.align-items-center .wrapper .alignright {
     left: 0;
 }
 
@@ -316,6 +386,7 @@ html, body {
 }
 
 .little-spacing,
+.post_content > blockquote,
 .site-content section,
 .simple_page h2 + p,
 .simple_page p + h3 {
@@ -333,6 +404,8 @@ html, body {
     }
 
     .little-spacing,
+    .handled-little-spacing,
+    .post_content > blockquote,
     .site-content section,
     .simple_page h2 + p,
     .simple_page p + h3 {
@@ -356,6 +429,8 @@ html, body {
     }
 
     .little-spacing,
+    .handled-little-spacing,
+    .post_content > blockquote,
     .site-content section,
     .simple_page h2 + p,
     .simple_page p + h3 {
@@ -364,6 +439,12 @@ html, body {
 
     .big-spacing {
         margin-bottom: 120px;
+    }
+
+}
+@media (max-width: 992px) {
+    .hero-holder {
+        margin-top: 120px;
     }
 
 }
