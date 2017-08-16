@@ -80,7 +80,6 @@ get_sidebar();
                             <div class="response" id="mce-success-response" style="display:none"></div>
                         </div>
                         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9934da7c3617d37ede589d0fd_92352c949a" tabindex="-1" value=""></div>
-                    </div>
                 </form>
             </div>
         </div>
