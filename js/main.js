@@ -86,6 +86,12 @@ jQuery(document).ready(function($){
         $('.chapter-sidebar__current > div').html($('#'+availableh1).html());
     };
 
+    var loaderScreen = function () {
+        setTimeout(function(){
+            $('body').addClass('loaded');
+        }, 3000);
+    };
+
     $(window).on('load', wrapperResizer);
     $(window).on('resize', wrapperResizer);
     $(window).on('load', alignElementToContainer);
@@ -94,6 +100,7 @@ jQuery(document).ready(function($){
     $(window).on('resize', computeProgress);
     $(window).on('load', computeh1positions);
     $(window).on('resize', computeh1positions);
+    $(window).on('load', loaderScreen);
 
     $('#drop_menu').on('click', function() {
         $('#drop_menu_list').toggleClass('invisible');

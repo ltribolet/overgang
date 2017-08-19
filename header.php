@@ -21,6 +21,22 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<?php if (is_home()) {?>
+    <div id="loader-wrapper" class="">
+        <div class="loader-section">
+            <div class="loader-text">
+                <p>
+                    Magazine qui engage l'action
+                </p>
+            </div>
+            <div class="logo">
+                <img class="img-fluid" src="<?= get_template_directory_uri() ?>/img/logo-overgang-white.png" alt="Overgang">
+            </div>
+        </div>
+    </div>
+<?php }?>
+
 <div class="<?php if (is_home() || is_single() || is_page('archives')) {?>root<?php }?>">
 
 <div class="site-wrapper">

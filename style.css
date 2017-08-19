@@ -70,6 +70,30 @@ html, body {
 .bg-white {
     background: #fff;
 }
+#loader-wrapper {
+    /*background: linear-gradient(to left top, #729E71, #527551);*/
+}
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: linear-gradient(to left top, #729E71, #527551);
+    text-align: center;
+    padding-top: 18%;
+}
+
+.loaded .loader-section {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.8s 1.6s ease-out;
+    transition: all 0.8s 1.6s ease-out;
+}
+
+.loader-text p {
+    color: #fff;
+}
 
 .site-content {
     overflow: hidden;
@@ -313,6 +337,71 @@ html, body {
     left: 0;
 }
 
+.newsletter_block {
+    margin-left: -999px;
+    padding-left: 999px;
+    margin-right: -999px;
+}
+
+.form_container {
+    padding: 50px 0;
+}
+
+.form_container label {
+    font-size: 18px;
+    color: #fff;
+    margin-right: 150px;
+}
+
+.form_container .email {
+    font-size: 14px;
+    width: 350px;
+    max-width: 80%;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #fff;
+    padding: 10px 0;
+    margin-bottom: 16px;
+    color: #fff;
+    border-radius: 0;
+}
+
+.form_container .email:focus {
+    outline: none;
+}
+
+input[type="email"]::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+input[type="email"]:-moz-placeholder {
+    color: #fff;
+    opacity: 0.5;
+}
+input[type="email"]::-moz-placeholder {
+    color: #fff;
+    opacity: 0.5;
+}
+input[type="email"]:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+input[type="email"]::-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form_container .button {
+    font-size: 14px;
+    color: #000;
+    padding: 10px 35px;
+    font-family: 'CircularStd-Book', sans-serif;
+}
+
+#submit-form {
+    background: #fff;
+    padding: 12px 35px;
+}
+
 .vcard_content {
     padding: 55px;
 }
@@ -441,10 +530,13 @@ html, body {
         margin-bottom: 120px;
     }
 
+    .newsletter_block {
+        display: none;
+    }
+
 }
 @media (max-width: 992px) {
     .hero-holder {
         margin-top: 120px;
     }
-
 }

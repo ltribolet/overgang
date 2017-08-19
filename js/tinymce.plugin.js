@@ -220,19 +220,23 @@
                 {
                     text: 'Bloc newlsetter',
                     onclick: function () {
-                        editor.insertContent('<div class="row newsletter_block">\n' +
+                        editor.insertContent('<div class="row newsletter_block little-spacing default-gradient">\n' +
                             '    <div class="col-12">\n' +
-                            '        <form action="//overgang.us16.list-manage.com/subscribe/post?u=9934da7c3617d37ede589d0fd&amp;id=92352c949a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>\n' +
-                            '            <div id="mc_embed_signup_scroll">\n' +
-                            '                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">\n' +
-                            '                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">\n' +
-                            '            </div>\n' +
-                            '            <div id="mce-responses">\n' +
-                            '                <div class="response" id="mce-error-response" style="display:none"></div>\n' +
-                            '                <div class="response" id="mce-success-response" style="display:none"></div>\n' +
-                            '            </div>\n' +
-                            '            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9934da7c3617d37ede589d0fd_92352c949a" tabindex="-1" value=""></div>\n' +
-                            '        </form>\n' +
+                                '    <div class="form_container">\n' +
+                                '        <form action="//overgang.us16.list-manage.com/subscribe/post?u=9934da7c3617d37ede589d0fd&amp;id=92352c949a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>\n' +
+                                '            <div id="mc_embed_signup_scroll">\n' +
+                                '                <label for="mce-EMAIL">Recevoir notre newsletter</label>\n' +
+                                '                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Votre adresse email">\n' +
+                                '                <input type="submit" value="Envoyer" name="subscribe" id="mc-embedded-subscribe" class="button">\n' +
+                                '                <a id="submit-form" href="#" class="d-none button">Envoyer</a>\n' +
+                                '            </div>\n' +
+                                '            <div id="mce-responses">\n' +
+                                '                <div class="response" id="mce-error-response" style="display:none"></div>\n' +
+                                '                <div class="response" id="mce-success-response" style="display:none"></div>\n' +
+                                '            </div>\n' +
+                                '            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9934da7c3617d37ede589d0fd_92352c949a" tabindex="-1" value=""></div>\n' +
+                                '        </form>\n' +
+                                '    </div>\n' +
                             '    </div>\n' +
                             '</div>\n');
                     }
