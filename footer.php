@@ -26,24 +26,22 @@
             <div class="row">
                 <div class="col-12 col-md-7 col-lg-5">
                     <p>Overgang Magazine meet amazing people, ambitious brands and association; let’s shake people brain together.</p>
-                    <p><a class="underline-link" href="">Facebook</a>
-                        <a class="underline-link" href="">Instagram</a></p>
                 </div>
                 <div class="col-12 col-md-5 col-lg-6">
                     <div class="row">
-                        <div class="col-12 col-lg-4 offset-lg-2">
+                        <div class="col-12 col-lg-6 offset-lg-2">
 				            <?php
 				            $args = [
 					            'menu'       => 'bottom-menu',
 					            'menu_class' => 'list-unstyled bottom-menu overgang_nav',
 					            'container'  => ''
 				            ];
-				            wp_nav_menu( $args );
+				            //wp_nav_menu( $args );
 				            ?>
-                        </div>
-                        <div class="col-12 col-lg-4 offset-lg-2">
-                            <ul class="list-unstyled bottom-menu overgang_nav">
-                                <li><a href="">Nous soutenir sur Tipee</a></li>
+                            <ul>
+                                <li><a class="underline-link" href="https://www.facebook.com/overgang.magazine/" target="_blank">Facebook</a></li>
+                                <li><a class="underline-link" href="https://www.instagram.com/overgang.magazine/" target="_blank">Instagram</a></li>
+                                <li><a class="underline-link" href="https://overgang.fr/pdf/Overgang_dossier_presse.pdf" target="_blank">Dossier de presse</a></li>
                             </ul>
                         </div>
                     </div>
@@ -66,13 +64,13 @@ get_sidebar();
 <?php if (is_home() || is_single() || is_page('archives')) {?>
     <div class="newsletter default-gradient d-flex justify-content-center align-items-center">
         <div>
-            <div class="d-flex justify-content-center newsletter__logo"><img class="m-auto" src="<?= get_template_directory_uri() ?>/img/logo-overgang-white.png" alt=""></div>
+            <div class="d-flex justify-content-center newsletter__logo"><img class="m-auto logo" src="<?= get_template_directory_uri() ?>/img/logo-overgang-white.png" alt=""></div>
             <p class="align-content-center" style="font-size: 40px">Recevoir notre newsletter</p>
             <div class="d-flex justify-content-center" id="mc_embed_signup">
                 <form action="//overgang.us16.list-manage.com/subscribe/post?u=9934da7c3617d37ede589d0fd&amp;id=92352c949a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                     <div id="mc_embed_signup_scroll">
 
-                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                            <input type="email" placeholder="Votre adresse mail" value="" name="EMAIL" class="required email" id="mce-EMAIL">
                             <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
                         </div>
                         <div id="mce-responses">
@@ -82,6 +80,7 @@ get_sidebar();
                         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9934da7c3617d37ede589d0fd_92352c949a" tabindex="-1" value=""></div>
                 </form>
             </div>
+            <p class="align-content-center" style="opacity:.4;">Pas de spam nous respectons vos données personnels</p>
         </div>
     </div>
 <?php }?>

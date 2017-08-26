@@ -14,12 +14,19 @@ html, body {
     font-family: 'CircularStd-Book', sans-serif;
 }
 
-.bold {
-    font-family: 'CircularStd-Bold';
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #222;
 }
 
-* {
-    color: #222;
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom : 0;
+    margin-top: 0;
+}
+
+.bold {
+    font-family: 'CircularStd-Bold';
 }
 
 .h1 {
@@ -184,12 +191,18 @@ html, body {
 }
 
 #secondary {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     width: 70px;
-    height: 100%;
+    height: 100vh;
     background: #fff;
+}
+
+#secondary.locked {
+    position: absolute;
+    top: initial;
+    bottom : 0;
 }
 
 .sidebar-container {
@@ -250,11 +263,11 @@ html, body {
 }
 
 .excerpt {
-    padding-bottom: 100px;
+    padding-bottom: 200px;
 }
 
 .sub_header h1 {
-    padding-top: 30px;
+    padding-top: 24px;
 }
 
 #post_body h1 {
@@ -422,6 +435,15 @@ input[type="email"]::-ms-input-placeholder {
     padding: 20px 0
 }
 
+.site-footer ul {
+    padding : 0;
+    list-style-type: none;
+}
+
+.site-footer li {
+    list-style-type: none;
+}
+
 .signature {
     margin-bottom: 40px;
 }
@@ -439,6 +461,7 @@ input[type="email"]::-ms-input-placeholder {
     z-index: 1;
     margin-bottom: 100vh;
     background: #fff;
+    -webkit-backface-visibility: hidden;
 }
 
 .newsletter {
@@ -451,6 +474,57 @@ input[type="email"]::-ms-input-placeholder {
     right: 0;
     bottom: 0;
 }
+
+.newsletter .logo {
+    width : 320px;
+    height: auto;
+    max-width: 80%;
+}
+
+.newsletter p {
+    color : white;
+    text-align: center;
+}
+
+.newsletter #mc_embed_signup {
+    width: 500px;
+    max-width: 80vw;
+}
+
+.newsletter form {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.newsletter input {
+    height : 40px;
+    display: inline-block;
+}
+
+.newsletter input:focus {
+    outline : none;
+}
+
+.newsletter input[type=email]  {
+    width: calc(100% - 130px);
+}
+
+.newsletter_block input[type=email], .newsletter input[type=email]  {
+    color : white;
+    background: transparent;
+    border : none;
+    border-bottom : 2px solid white;
+}
+
+.newsletter_block input[type=submit], .newsletter input[type=submit]  {
+    color : black;
+    background : white;
+    border-radius : 2px;
+    border : none;
+    width : 120px;
+}
+
 
 .archive_item {
     color: #000;
@@ -502,7 +576,7 @@ input[type="email"]::-ms-input-placeholder {
     }
 
     .big-spacing {
-        margin-bottom: 160px;
+        margin-bottom: 140px;
     }
 
 }
