@@ -31,21 +31,14 @@ jQuery(document).ready(function($){
 
     var computeProgress = function () {
         $(window).scroll(function () {
-            var s = $(window).scrollTop(),
-                w = $(window).height(),
-                $root = $('.root'),
-                c = $root.height();
-            scrollPercent = (s / (c - w)) * 100;
-            var position = scrollPercent;
-
-            if (s + w < c) {
-                $('.moving-sidebar').css('top', s + 'px');
-            }
-
+           var s = $(window).scrollTop(),
+            w = $(window).height(),
+            $root = $('.root'),
+            c = $root.height();
+        
+            $('#secondary').toggleClass('locked', s + w > c);
             var latesth1 = getLatestH1Visible(s+w);
             updateSidebar(latesth1);
-
-            $("#progressBar").attr('style', 'height:' + position + '%');
         });
     };
 
