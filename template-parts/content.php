@@ -54,9 +54,9 @@ if ( $h1s->length > 0 ) {
 $modified = $dom->saveHTML();
 ?>
     <section id="introduction" class="sub_header" style="background-image: linear-gradient(to left top, <?= $color_end ?>, <?= $color_begin ?>);">
-        <div class="container hero-holder d-flex justify-content-start big-spacing">
+        <div class="container hero-holder d-flex justify-content-start middle-spacing">
             <div class="row align-items-center justify-content-between">
-                <div class="col-12 col-lg-5 handled-little-spacing">
+                <div class="col-12 col-lg-5 handled-big-spacing">
                     <h3 class="information light-grey"><?= get_field( 'magazine_number', get_the_ID() ) ?> _ <?= date('M Y') ?></h3>
                     <h3 class="information light-grey"><?= get_field( 'location', get_the_ID() ) ?></h3>
                     <h1 class="h1 bold"><?php the_title() ?></h1>
@@ -106,7 +106,7 @@ $modified = $dom->saveHTML();
 			<?= $modified ?>
         </div>
     </section>
-    <section>
+    <section class="little-spacing">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -116,7 +116,7 @@ $modified = $dom->saveHTML();
         </div>
     </section>
 
-    <section id="related">
+    <section id="related" class="little-spacing">
         <div class="container">
             <div class="row">
                 <div class="col-12"><h3 class="information light-grey">Pour aller plus loin</h3></div>

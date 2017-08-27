@@ -48,7 +48,7 @@ get_header(); ?>
 		                $featured_image  = wp_get_attachment_image_src( get_post_thumbnail_id( $postLeft->ID ), 'full' );
 		                $featured_image  = reset( $featured_image );
 	                    ?>
-                    <a class="archive_item inactive_item little-spacing" href="<?= esc_url( get_permalink($postLeft->ID) )?>" data-bgcolor-begin="<?= get_field( 'color_selector_begin', $postLeft->ID ) ?>" data-bgcolor-end="<?= get_field( 'color_selector_end', $postLeft->ID ) ?>">
+                    <a class="archive_item inactive_item big-spacing" href="<?= esc_url( get_permalink($postLeft->ID) )?>" data-bgcolor-begin="<?= get_field( 'color_selector_begin', $postLeft->ID ) ?>" data-bgcolor-end="<?= get_field( 'color_selector_end', $postLeft->ID ) ?>">
                         <div class="row">
                             <div class="col-12">
                                 <img class="img-fluid" src="<?= $featured_image ?>" alt="">

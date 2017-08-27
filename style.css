@@ -55,6 +55,10 @@ h1, h2, h3, h4, h5, h6 {
     background-image: linear-gradient(to left top, #729E71, #527551);
 }
 
+.list-unstyled {
+    margin-bottom: 0;
+}
+
 .unstyled-link,
 .unstyled-link:hover,
 .unstyled-link:focus,
@@ -103,7 +107,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .site-content {
+    position: relative;
+    z-index: 5;
     overflow: hidden;
+    
 }
 
 .navbar {
@@ -188,6 +195,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .site-wrapper {
     padding-right: 70px;
+    position: relative;
+    -webkit-transform: translate3d(0,0,0);
 }
 
 #secondary {
@@ -229,23 +238,48 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #secondary ul {
-    height:100%;
+    height:70px;
+    width:100vh;
+    position: relative;
+    left : 70px;
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
 #secondary ul li {
-    height: 33%;
+    /*height: 33%;*/
     margin: 0;
+    line-height: 70px;
 }
+
+#secondary ul a {
+    text-decoration: none;
+    color : inherit;
+}
+
 
 .vertical-container {
     position: relative;
 }
 
 .vertical-text {
-    transform: rotate(90deg);
-    transform-origin: left top 0;
-    width: 300px;
+    /*transform: rotate(90deg);
     margin-left: 49px;
+    width: 300px;
+    transform-origin: left top 0;*/
 }
 
 .chapter-sidebar {
@@ -256,11 +290,13 @@ h1, h2, h3, h4, h5, h6 {
     padding-right: 0;
     padding-left: 0;
     padding-bottom: 0;
+    margin-bottom : 140px;
 }
 
 .sub_header {
-    padding-top: 96px;
+    padding-top: 96px;  
 }
+
 
 .excerpt {
     padding-bottom: 200px;
@@ -445,7 +481,8 @@ input[type="email"]::-ms-input-placeholder {
 }
 
 .signature {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+    padding-top: 50px;
 }
 
 .copyright {
@@ -458,21 +495,22 @@ input[type="email"]::-ms-input-placeholder {
 .root {
     min-height: 100vh;
     position: relative;
-    z-index: 1;
+    z-index: 10;
     margin-bottom: 100vh;
     background: #fff;
-    -webkit-backface-visibility: hidden;
+    
 }
 
 .newsletter {
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
     padding: 150px 0 200px;
     color: #fff;
-    z-index: -1;
+    z-index: 0;
     position:fixed;
+    top : 0;
     left: 0;
-    right: 0;
-    bottom: 0;
 }
 
 .newsletter .logo {
@@ -548,15 +586,24 @@ input[type="email"]::-ms-input-placeholder {
     margin-bottom: 40px;
 }
 
-.little-spacing,
+.big-spacing,
 .post_content > blockquote,
 .site-content section,
 .simple_page h2 + p,
 .simple_page p + h3 {
-    margin-bottom: 100px;
+    margin-bottom: 200px;
 }
 
-.big-spacing {
+.post_content p + h2.tiny-spacing {
+    margin-top: 80px;
+}
+
+.site-content section.little-spacing,
+.little-spacing {
+    margin-bottom: 80px;
+}
+
+.middle-spacing {
     margin-bottom: 200px;
 }
 
@@ -566,16 +613,22 @@ input[type="email"]::-ms-input-placeholder {
         line-height: 60px;
     }
 
-    .little-spacing,
-    .handled-little-spacing,
+    .big-spacing,
+    .handled-big-spacing,
     .post_content > blockquote,
     .site-content section,
     .simple_page h2 + p,
     .simple_page p + h3 {
-        margin-bottom: 80px;
+        margin-bottom: 200px;
     }
 
-    .big-spacing {
+    .site-content section.little-spacing,
+    .little-spacing {
+        margin-bottom: 80px;
+    }
+    
+
+    .middle-spacing {
         margin-bottom: 140px;
     }
 
@@ -591,17 +644,23 @@ input[type="email"]::-ms-input-placeholder {
         line-height: 40px;
     }
 
-    .little-spacing,
-    .handled-little-spacing,
+
+    .big-spacing,
+    .handled-big-spacing,
     .post_content > blockquote,
     .site-content section,
     .simple_page h2 + p,
     .simple_page p + h3 {
-        margin-bottom: 60px;
+        margin-bottom: 120px;
     }
 
-    .big-spacing {
-        margin-bottom: 120px;
+    .site-content section.little-spacing,
+    .little-spacing {
+        margin-bottom: 40px;
+    }
+
+    .middle-spacing {
+        margin-bottom: 60px;
     }
 
     .newsletter_block {

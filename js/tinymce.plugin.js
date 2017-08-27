@@ -26,7 +26,7 @@
                             ],
                             onsubmit: function (e) {
                                 editor.focus();
-                                var img = '<div class="row little-spacing"><div class="col-12">' + $(e.data.img).addClass('aligncenter').prop('outerHTML') + '</div></div>';
+                                var img = '<div class="row big-spacing"><div class="col-12">' + $(e.data.img).addClass('aligncenter').prop('outerHTML') + '</div></div>';
                                 console.log(e.data);
                                 editor.execCommand('mceInsertContent', false, img);
                             }
@@ -76,7 +76,7 @@
                             ],
                             onsubmit: function (e) {
                                 editor.focus();
-                                var imgs = '<div class="row align-items-center justify-content-between little-spacing"><div class="col-12 col-md-6"><div class="wrapper">'+$(e.data.img1).removeClass('size-full alignnone alignright aligncenter').addClass('alignleft').prop('outerHTML')+'</div></div><div class="col-12 col-md-6">'+$(e.data.img2).removeClass('size-full alignnone alignright aligncenter').addClass('img-fluid')+'</div></div>';
+                                var imgs = '<div class="row align-items-center justify-content-between big-spacing"><div class="col-12 col-md-6"><div class="wrapper">'+$(e.data.img1).removeClass('size-full alignnone alignright aligncenter').addClass('alignleft').prop('outerHTML')+'</div></div><div class="col-12 col-md-6">'+$(e.data.img2).removeClass('size-full alignnone alignright aligncenter').addClass('img-fluid')+'</div></div>';
                                 editor.execCommand('mceInsertContent', false, imgs);
                             }
                         });
@@ -125,7 +125,7 @@
                             ],
                             onsubmit: function (e) {
                                 editor.focus();
-                                var imgs = '<div class="row align-items-center justify-content-between little-spacing"><div class="col-12 col-md-6">'+$(e.data.img1).removeClass('size-full alignnone alignright aligncenter').addClass('img-fluid').prop('outerHTML')+'</div><div class="col-12 col-md-6"><div class="wrapper">'+$(e.data.img2).removeClass('size-full alignnone alignright aligncenter').addClass('alignright').prop('outerHTML')+'</div></div></div>';
+                                var imgs = '<div class="row align-items-center justify-content-between big-spacing"><div class="col-12 col-md-6">'+$(e.data.img1).removeClass('size-full alignnone alignright aligncenter').addClass('img-fluid').prop('outerHTML')+'</div><div class="col-12 col-md-6"><div class="wrapper">'+$(e.data.img2).removeClass('size-full alignnone alignright aligncenter').addClass('alignright').prop('outerHTML')+'</div></div></div>';
                                 editor.execCommand('mceInsertContent', false, imgs);
                             }
                         });
@@ -163,7 +163,7 @@
                             ],
                             onsubmit: function(e) {
                                 editor.focus();
-                                var div = '<div class="row align-items-center justify-content-between little-spacing"><div class="col-12 col-md-5 offset-md-1">'+$(e.data.img).addClass('img-fluid').prop('outerHTML')+'</div><div class="col-12 col-md-5"><blockquote>'+e.data.quote+'</blockquote></div></div>';
+                                var div = '<div class="row align-items-center justify-content-between big-spacing"><div class="col-12 col-md-5 offset-md-1">'+$(e.data.img).addClass('img-fluid').prop('outerHTML')+'</div><div class="col-12 col-md-5"><blockquote>'+e.data.quote+'</blockquote></div></div>';
                                 editor.execCommand('mceInsertContent', false, div);
                             }
                         });
@@ -196,7 +196,7 @@
                             ],
                             onsubmit: function(e) {
                                 editor.focus();
-                                var div = '<div class="row align-items-center little-spacing"><div class="col-12 col-lg-5 offset-lg-1"><blockquote>'+e.data.quote+'</blockquote></div><div class="col-12 col-md-10 offset-md-1 col-lg-5"><h2 class="bold text tiny-spacing">'+e.data.question+'</h2><p>'+e.data.text+'</p></div></div>';
+                                var div = '<div class="row align-items-center big-spacing"><div class="col-12 col-lg-5 offset-lg-1"><blockquote>'+e.data.quote+'</blockquote></div><div class="col-12 col-md-10 offset-md-1 col-lg-5"><h2 class="bold text tiny-spacing">'+e.data.question+'</h2><p>'+e.data.text+'</p></div></div>';
                                 editor.execCommand('mceInsertContent', false, div);
                             }
                         });
@@ -220,7 +220,7 @@
                 {
                     text: 'Bloc newlsetter',
                     onclick: function () {
-                        editor.insertContent('<div class="row newsletter_block little-spacing default-gradient">\n' +
+                        editor.insertContent('<div class="row newsletter_block big-spacing default-gradient">\n' +
                             '    <div class="col-12">\n' +
                                 '    <div class="form_container">\n' +
                                 '        <form action="//overgang.us16.list-manage.com/subscribe/post?u=9934da7c3617d37ede589d0fd&amp;id=92352c949a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>\n' +
