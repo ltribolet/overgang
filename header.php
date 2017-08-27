@@ -31,7 +31,7 @@
                 </p>
             </div>
             <div class="logo">
-                <img class="img-fluid" src="<?= get_template_directory_uri() ?>/img/logo-overgang-white.png" alt="Overgang">
+                <img class="img-fluid" src="<?= get_template_directory_uri() ?>/img/logo-overgang-white.svg" alt="Overgang">
             </div>
         </div>
     </div>
@@ -54,7 +54,7 @@
 	            ?></div>
             </div>
             <a class="navbar-brand" href="#">
-                <img src="<?= get_template_directory_uri() ?>/img/logo-overgang.png" alt="">
+                <img src="<?= get_template_directory_uri() ?>/img/logo-overgang.svg" alt="">
             </a>
             <div class="collapse navbar-collapse overgang_nav" id="navbarSupportedContent">
 	            <?php

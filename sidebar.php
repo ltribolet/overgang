@@ -7,8 +7,9 @@
                     <div class="vertical-text">Övergång magazine - bi hebdomadaire</div>
                 </li>
                 <li class="default-sidebar">
-                    <div class="vertical-text">Facebook - Instagram</div>
+                    <div class="vertical-text"><a href="https://www.facebook.com/overgang.magazine/" target="_blank">Facebook</a> - <a href="https://www.instagram.com/overgang.magazine/" target="_blank">Instagram</a></div>
                 </li>
+                <li class="default-sidebar">&nbsp;</li>
                 <li class="chapter-sidebar">
                     <div class="vertical-text">Go to top</div>
                 </li>
