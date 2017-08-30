@@ -20,7 +20,6 @@ $related       = get_field( 'related', get_the_ID() );
 $post_content = apply_filters( 'the_content', get_the_content() );
 $post_content = str_replace( [ "\r\n", "\n", "\r" ], "", $post_content );
 
-
 // must do otherwise DOMDocument does not have a root and add one by itself but not the way we want it.
 $post_content = '<div class="post_content">' . $post_content . '</div>';
 
@@ -54,7 +53,7 @@ if ( $h1s->length > 0 ) {
 
 $modified = $dom->saveHTML();
 ?>
-    <section id="introduction" class="sub_header" style="background-image: linear-gradient(to left top, <?= $color_end ?>, <?= $color_begin ?>);">
+    <section id="introduction" class="sub_hea der" style="background-image: linear-gradient(to left top, <?= $color_end ?>, <?= $color_begin ?>);">
         <div class="container hero-holder d-flex justify-content-start middle-spacing">
             <div class="row align-items-center justify-content-between">
                 <div class="col-12 col-lg-5 handled-big-spacing">
@@ -122,9 +121,7 @@ $modified = $dom->saveHTML();
             <div class="row">
                 <div class="col-12"><h3 class="information light-grey">Pour aller plus loin</h3></div>
             </div>
-            <div class="row">
              <?php echo $related ?>
-            </div>
         </div>
     </section>
     <section id="about">

@@ -65,7 +65,7 @@ get_sidebar();
     <div class="newsletter default-gradient d-flex justify-content-center align-items-center">
         <div>
             <div class="d-flex justify-content-center newsletter__logo"><img class="m-auto logo" src="<?= get_template_directory_uri() ?>/img/logo-overgang-white.svg" alt=""></div>
-            <p class="align-content-center" style="font-size: 40px">Recevoir notre newsletter</p>
+            <p class="align-content-center h2">Recevoir notre newsletter</p>
             <div class="d-flex justify-content-center" id="mc_embed_signup">
                 <form action="//overgang.us16.list-manage.com/subscribe/post?u=9934da7c3617d37ede589d0fd&amp;id=92352c949a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                     <div id="mc_embed_signup_scroll">

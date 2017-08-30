@@ -42,7 +42,7 @@
 <div class="site-wrapper">
 	<div id="content" class="site-content">
         <nav class="pushed__left navbar navbar-toggleable-sm navbar-light">
-            <div class="drop_menu_container hidden-md-up">
+            <!-- <div class="drop_menu_container hidden-md-up">
                 <a href="#" class="drop_menu" id="drop_menu">Menu <span class="caret"></span></a>
 	            <div id="drop_menu_list" class="invisible"><?php
 	            $args = [
@@ -52,11 +52,11 @@
 	            ];
 	            wp_nav_menu($args);
 	            ?></div>
-            </div>
+            </div> -->
             <a class="navbar-brand" href="#">
                 <img src="<?= get_template_directory_uri() ?>/img/logo-overgang-white.svg" width="150" height="auto" alt="">
             </a>
-            <div class="collapse navbar-collapse overgang_nav" id="navbarSupportedContent">
+            <!-- <div class="collapse navbar-collapse overgang_nav" id="navbarSupportedContent">
 	            <?php
                 $args = [
                     'menu' => 'top-menu',
@@ -65,5 +65,5 @@
                 ];
                 wp_nav_menu($args);
                 ?>
-            </div>
+            </div> -->
         </nav>
