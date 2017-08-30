@@ -34,11 +34,15 @@ jQuery(document).ready(function($){
            var s = $(window).scrollTop(),
             w = $(window).height(),
             $root = $('.root'),
-            c = $root.height();
+            c = $root.height(),
+            scrollPercent = (s / (c - w)) * 100;
         
             $('#secondary').toggleClass('locked', s + w > c);
             var latesth1 = getLatestH1Visible(s+w);
             updateSidebar(latesth1);
+
+            var position = scrollPercent;
+            $("#progressBar").attr('style', 'height:' + position + '%');
         });
     };
 

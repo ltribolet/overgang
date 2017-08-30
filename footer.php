@@ -25,7 +25,7 @@
             </div>
             <div class="row">
                 <div class="col-12 col-md-7 col-lg-5">
-                    <p>Overgang Magazine meet amazing people, ambitious brands and association; let’s shake people brain together.</p>
+                    <p>Övergång est un magazine bi-mensuel qui donne la voix aux acteurs d'un mouvement éco-responsable.</p>
                 </div>
                 <div class="col-12 col-md-5 col-lg-6">
                     <div class="row">

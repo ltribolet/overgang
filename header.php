@@ -27,7 +27,7 @@
         <div class="loader-section">
             <div class="loader-text">
                 <p>
-                    Magazine qui engage l'action
+                    Faire autrement
                 </p>
             </div>
             <div class="logo">
@@ -54,7 +54,7 @@
 	            ?></div>
             </div>
             <a class="navbar-brand" href="#">
-                <img src="<?= get_template_directory_uri() ?>/img/logo-overgang.svg" alt="">
+                <img src="<?= get_template_directory_uri() ?>/img/logo-overgang-white.svg" width="150" height="auto" alt="">
             </a>
             <div class="collapse navbar-collapse overgang_nav" id="navbarSupportedContent">
 	            <?php

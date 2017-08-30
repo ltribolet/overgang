@@ -12,13 +12,19 @@
 
 html, body {
     font-family: 'CircularStd-Book', sans-serif;
+    color: #222;
 }
 
 * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #222;
 }
+
+a {
+    color : #222;
+}
+
+
 
 h1, h2, h3, h4, h5, h6 {
     margin-bottom : 0;
@@ -52,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .default-gradient {
-    background-image: linear-gradient(to left top, #729E71, #527551);
+    background-image: linear-gradient(to left top, #335832, #689D67);
 }
 
 .list-unstyled {
@@ -90,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     z-index: 1000;
-    background: linear-gradient(to left top, #729E71, #527551);
+    background-image: linear-gradient(to left top, #335832, #689D67);
     text-align: center;
     padding-top: 18%;
 }
@@ -130,11 +136,15 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 12px;
 }
 
-.overgang_nav a,
 .drop_menu_container a,
 .underline-link {
     color: #232323;
 }
+ 
+.overgang_nav a {
+    color : white;
+}
+
 .underline-link:hover,
 .drop_menu_container a:hover,
 .overgang_nav .navbar-nav a:hover {
@@ -280,6 +290,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 49px;
     width: 300px;
     transform-origin: left top 0;*/
+    margin : 0 30px;
 }
 
 .chapter-sidebar {
@@ -291,6 +302,11 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 0;
     padding-bottom: 0;
     margin-bottom : 140px;
+    color: white;
+}
+
+#introduction h3.light-grey {
+    color : white;
 }
 
 .sub_header {
@@ -453,6 +469,12 @@ input[type="email"]::-ms-input-placeholder {
 
 .vcard_content {
     padding: 55px;
+    color : white;
+}
+
+.vcard_content a {
+    text-decoration: underline;
+    color : white;
 }
 
 #archives {
@@ -499,6 +521,19 @@ input[type="email"]::-ms-input-placeholder {
     margin-bottom: 100vh;
     background: #fff;
     
+}
+
+#related {
+    margin-bottom: 0px; 
+}
+
+#related a {
+    color : #222;
+    text-decoration: underline;
+}
+
+#related h3.information{
+    margin-bottom: 20px;
 }
 
 .newsletter {
@@ -608,10 +643,10 @@ input[type="email"]::-ms-input-placeholder {
 }
 
 @media (min-width: 768px) {
-    .h1 {
+    /* .h1 {
         font-size: 50px;
         line-height: 60px;
-    }
+    } */
 
     .big-spacing,
     .handled-big-spacing,

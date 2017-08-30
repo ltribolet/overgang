@@ -15,6 +15,7 @@ $color_end          = get_field( 'color_selector_end', get_the_ID() );
 $subtitle       = get_field( 'subtitle', get_the_ID() );
 $excerpt        = get_the_excerpt( get_the_ID() );
 $tags           = wp_get_post_tags( get_the_ID() );
+$related       = get_field( 'related', get_the_ID() );
 
 $post_content = apply_filters( 'the_content', get_the_content() );
 $post_content = str_replace( [ "\r\n", "\n", "\r" ], "", $post_content );
@@ -24,7 +25,7 @@ $post_content = str_replace( [ "\r\n", "\n", "\r" ], "", $post_content );
 $post_content = '<div class="post_content">' . $post_content . '</div>';
 
 $dom           = new DOMDocument();
-$dom->encoding = 'utf-8';
+$dom->encoding = 'utf-8'; 
 $dom->loadHTML( utf8_decode( $post_content ), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
 
 $h2s = $dom->getElementsByTagName( 'h2' );
@@ -109,32 +110,20 @@ $modified = $dom->saveHTML();
     <section class="little-spacing">
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12"> 
                     <hr class="delimiter">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="related" class="little-spacing">
+    <section id="related" class="">
         <div class="container">
             <div class="row">
                 <div class="col-12"><h3 class="information light-grey">Pour aller plus loin</h3></div>
             </div>
             <div class="row">
-
-                <div class="col-3">
-
-                </div>
-                <div class="col-3">
-
-                </div>
-                <div class="col-3">
-
-                </div>
-                <div class="col-3">
-
-                </div>
+             <?php echo $related ?>
             </div>
         </div>
     </section>
@@ -159,9 +148,9 @@ $modified = $dom->saveHTML();
             </div>
         </div>
     </section>
-    <section id="archives">
+    <!-- <section id="archives">
         <div class="d-flex justify-content-center">
             <a style="bold" href="<?= get_page_link( get_page_by_path( 'archives' )->ID ); ?>">Tous les magazines</a>
         </div>
-    </section>
+    </section> -->
 <?php
