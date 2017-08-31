@@ -41,6 +41,7 @@
                             <ul>
                                 <li><a class="underline-link" href="https://www.facebook.com/overgang.magazine/" target="_blank">Facebook</a></li>
                                 <li><a class="underline-link" href="https://www.instagram.com/overgang.magazine/" target="_blank">Instagram</a></li>
+                                <li><a class="underline-link" href="mailto:contact@overgang.fr" target="_blank">Nous contacter</a></li>
                                 <li><a class="underline-link" href="https://overgang.fr/pdf/Overgang_dossier_presse.pdf" target="_blank">Dossier de presse</a></li>
                             </ul>
                         </div>
