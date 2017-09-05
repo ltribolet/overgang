@@ -18,6 +18,35 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
+
+<title>{{title}}</title>
+
+<?php 
+    $title = 'Övergång Magazine';
+    $description = 'Övergång est un magazine bi-mensuel qui donne la voix aux acteurs d\'un mouvement éco-responsable';
+    $img = get_template_directory_uri().'/img/share.jpg';
+?>
+
+<meta name="description" content="<?php echo $description; ?>"/>
+
+<!-- FB OPENGRAPH -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="<?php echo $title; ?>"/>
+<meta property="og:title" content="<?php echo $title; ?>"/>
+<meta property="og:description" content="<?php echo $description; ?>"/>
+<meta property="og:image" content="<?php echo $img; ?>"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+<!-- TWITTER CARD -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="<?php echo $title; ?>"/>
+<meta name="twitter:image" content="<?php echo $img; ?>"/>
+
+<!-- GOOGLE PLUS -->
+<meta itemprop="name" content="<?php echo $title; ?>"/>
+<meta itemprop="description" content="<?php echo $description; ?>"/>
+
 </head>
 
 <body <?php body_class(); ?>>
